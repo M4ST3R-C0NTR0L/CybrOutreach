@@ -1,0 +1,19 @@
+# Example leads CSV file for IceBreaker batch processing
+# 
+# Required columns:
+#   - name: Recipient's full name
+#   - company: Company name
+#
+# Optional columns:
+#   - context: Additional context for AI personalization
+#   - email: Recipient's email address
+#   - title: Job title
+#   - linkedin: LinkedIn profile URL
+#   - website: Company website
+
+name,company,context,title,email,linkedin
+John Smith,Acme Corp,"AI startup focused on NLP, recently raised Series A",CEO,john@acme.com,https://linkedin.com/in/johnsmith
+Jane Doe,Tech Inc,"SaaS company with 50+ employees, expanding to Europe",CTO,jane@techinc.com,https://linkedin.com/in/janedoe
+Bob Wilson,StartupXYZ,"Pre-seed fintech startup, 5 employees",Founder,bob@startupxyz.io,
+Sarah Chen,ScaleUp Co,"Rapidly growing e-commerce platform, hiring aggressively",VP Sales,sarah@scaleup.co,https://linkedin.com/in/sarahchen
+Mike Johnson,GrowthCo,"B2B marketing agency, looking for new tools",Director,mike@growthco.com,
