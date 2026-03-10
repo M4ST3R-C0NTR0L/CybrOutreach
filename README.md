@@ -1,4 +1,4 @@
-# 🧊 IceBreaker
+# 🧊 CybrOutreach
 
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.8%2B-blue.svg" alt="Python 3.8+">
@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/yourusername/icebreaker/main/assets/demo.gif" alt="IceBreaker Demo" width="700">
+  <img src="https://raw.githubusercontent.com/yourusername/CybrOutreach/main/assets/demo.gif" alt="CybrOutreach Demo" width="700">
 </p>
 
 ## ✨ Features
@@ -32,20 +32,20 @@
 ### From PyPI (Recommended)
 
 ```bash
-pip install icebreaker
+pip install CybrOutreach
 ```
 
 ### From Source
 
 ```bash
-git clone https://github.com/yourusername/icebreaker.git
-cd icebreaker
+git clone https://github.com/yourusername/CybrOutreach.git
+cd CybrOutreach
 pip install -e .
 ```
 
 ## 🔑 Configuration
 
-IceBreaker requires an AI provider API key. Set one of these environment variables:
+CybrOutreach requires an AI provider API key. Set one of these environment variables:
 
 ```bash
 # Recommended - supports 100+ models
@@ -69,10 +69,10 @@ OPENROUTER_MODEL=anthropic/claude-3.5-sonnet
 
 ```bash
 # Basic intro email
-icebreaker generate --to "John Smith" --company "Acme Corp"
+CybrOutreach generate --to "John Smith" --company "Acme Corp"
 
 # Professional tone with context
-icebreaker generate \
+CybrOutreach generate \
   --to "Jane Doe" \
   --company "TechStartup" \
   --tone professional \
@@ -80,38 +80,38 @@ icebreaker generate \
   --context "They are a Series A SaaS company focusing on AI"
 
 # Casual follow-up
-icebreaker generate \
+CybrOutreach generate \
   --to "Mike Johnson" \
   --company "GrowthCo" \
   --tone casual \
   --template follow-up
 
 # Copy to clipboard
-icebreaker generate --to "Sarah" --company "ScaleUp" --clipboard
+CybrOutreach generate --to "Sarah" --company "ScaleUp" --clipboard
 
 # Save to file
-icebreaker generate --to "Alex" --company "Startup" --output email.txt
+CybrOutreach generate --to "Alex" --company "Startup" --output email.txt
 ```
 
 ### List Available Templates
 
 ```bash
-icebreaker templates
+CybrOutreach templates
 ```
 
 ### Preview a Template Structure
 
 ```bash
-icebreaker preview intro
-icebreaker preview follow-up
-icebreaker preview break-up
-icebreaker preview meeting-request
+CybrOutreach preview intro
+CybrOutreach preview follow-up
+CybrOutreach preview break-up
+CybrOutreach preview meeting-request
 ```
 
 ### Check Provider Status
 
 ```bash
-icebreaker status
+CybrOutreach status
 ```
 
 ### Batch Processing from CSV
@@ -129,17 +129,17 @@ Run batch generation:
 
 ```bash
 # Basic batch
-icebreaker batch --csv leads.csv
+CybrOutreach batch --csv leads.csv
 
 # With specific tone and template
-icebreaker batch \
+CybrOutreach batch \
   --csv leads.csv \
   --tone professional \
   --template intro \
   --output ./emails
 
 # With rate limiting (recommended)
-icebreaker batch \
+CybrOutreach batch \
   --csv leads.csv \
   --delay 2.0 \
   --context-field context
@@ -183,7 +183,7 @@ export OPENROUTER_SITE_NAME="Your Company"
 
 ### Provider Priority
 
-By default, IceBreaker auto-detects available providers in this order:
+By default, CybrOutreach auto-detects available providers in this order:
 1. OpenRouter (recommended - most models)
 2. OpenAI
 3. Anthropic
@@ -191,7 +191,7 @@ By default, IceBreaker auto-detects available providers in this order:
 Force a specific provider:
 
 ```bash
-icebreaker --provider openai generate --to "John" --company "Acme"
+CybrOutreach --provider openai generate --to "John" --company "Acme"
 ```
 
 Or set via environment:
@@ -218,8 +218,8 @@ Optional columns:
 ### Setup
 
 ```bash
-git clone https://github.com/yourusername/icebreaker.git
-cd icebreaker
+git clone https://github.com/yourusername/CybrOutreach.git
+cd CybrOutreach
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -e ".[dev]"
@@ -234,15 +234,15 @@ pytest
 ### Code Quality
 
 ```bash
-black icebreaker/ tests/
-ruff check icebreaker/ tests/
-mypy icebreaker/
+black CybrOutreach/ tests/
+ruff check CybrOutreach/ tests/
+mypy CybrOutreach/
 ```
 
 ## 📝 Example Output
 
 ```
-🧊 IceBreaker v1.0.0
+🧊 CybrOutreach v1.0.0
 
 ┌─────────────────────────────────────────────────────────────┐
 │ Email Details                                               │
@@ -300,5 +300,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ---
 
 <p align="center">
-  Made with ❄️ by the IceBreaker Team
+  Made with ❄️ by the CybrOutreach Team
 </p>
