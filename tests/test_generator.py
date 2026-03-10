@@ -7,12 +7,12 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from icebreaker.generator import (
+from cybroutreach.generator import (
     EmailGenerator,
     GeneratedEmail,
     validate_csv_file,
 )
-from icebreaker.templates import TemplateType, Tone
+from cybroutreach.templates import TemplateType, Tone
 
 
 class TestGeneratedEmail:

@@ -1,5 +1,5 @@
 """
-Email generation logic for IceBreaker.
+Email generation logic for CybrOutreach.
 
 Handles the orchestration of template selection, AI prompting, and output formatting.
 """
@@ -14,13 +14,13 @@ import csv
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn
 
-from icebreaker.templates import (
+from cybroutreach.templates import (
     TemplateType, 
     Tone, 
     get_prompt_template,
     list_templates as list_available_templates
 )
-from icebreaker.providers import get_provider, GenerationResult, AIProvider
+from cybroutreach.providers import get_provider, GenerationResult, AIProvider
 
 
 console = Console()

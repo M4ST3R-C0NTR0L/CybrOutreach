@@ -2,7 +2,7 @@
 
 import pytest
 
-from icebreaker.templates import (
+from cybroutreach.templates import (
     TemplateType,
     Tone,
     get_template,

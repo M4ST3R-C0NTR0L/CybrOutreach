@@ -1,5 +1,5 @@
 """
-AI provider integrations for IceBreaker.
+AI provider integrations for CybrOutreach.
 
 Supports multiple AI providers through OpenRouter and direct integrations.
 """
@@ -59,8 +59,8 @@ class OpenRouterProvider(AIProvider):
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
         self.api_key = api_key or os.getenv("OPENROUTER_API_KEY")
         self.model = model or os.getenv("OPENROUTER_MODEL", self.DEFAULT_MODEL)
-        self.site_url = os.getenv("OPENROUTER_SITE_URL", "https://icebreaker.dev")
-        self.site_name = os.getenv("OPENROUTER_SITE_NAME", "IceBreaker")
+        self.site_url = os.getenv("OPENROUTER_SITE_URL", "https://github.com/M4ST3R-C0NTR0L/CybrOutreach")
+        self.site_name = os.getenv("OPENROUTER_SITE_NAME", "CybrOutreach")
     
     def is_available(self) -> bool:
         """Check if OpenRouter API key is configured."""
@@ -285,7 +285,7 @@ def get_provider(provider_name: Optional[str] = None) -> AIProvider:
     
     Priority:
     1. Explicit provider_name parameter
-    2. ICEBREAKER_PROVIDER env var
+    2. CYBROUTREACH_PROVIDER env var (or ICEBREAKER_PROVIDER for backward compatibility)
     3. First available provider (OpenRouter > OpenAI > Anthropic)
     
     Args:
@@ -297,7 +297,7 @@ def get_provider(provider_name: Optional[str] = None) -> AIProvider:
     Raises:
         ValueError: If no provider is available
     """
-    provider_name = provider_name or os.getenv("ICEBREAKER_PROVIDER", "auto")
+    provider_name = provider_name or os.getenv("CYBROUTREACH_PROVIDER") or os.getenv("ICEBREAKER_PROVIDER", "auto")
     
     providers: Dict[str, AIProvider] = {
         "openrouter": OpenRouterProvider(),

@@ -1,5 +1,5 @@
 """
-CLI interface for IceBreaker.
+CLI interface for CybrOutreach.
 
 Provides commands for generating cold emails, batch processing, and template management.
 """
@@ -16,10 +16,10 @@ from rich.table import Table
 from rich.syntax import Syntax
 import pyperclip
 
-from icebreaker import __version__
-from icebreaker.templates import TemplateType, Tone, list_templates, TEMPLATES
-from icebreaker.providers import list_available_providers, get_provider
-from icebreaker.generator import (
+from cybroutreach import __version__
+from cybroutreach.templates import TemplateType, Tone, list_templates, TEMPLATES
+from cybroutreach.providers import list_available_providers, get_provider
+from cybroutreach.generator import (
     EmailGenerator, 
     GeneratedEmail,
     validate_csv_file
@@ -29,7 +29,7 @@ console = Console()
 
 
 @click.group()
-@click.version_option(version=__version__, prog_name="icebreaker")
+@click.version_option(version=__version__, prog_name="CybrOutreach")
 @click.option(
     "--provider",
     type=click.Choice(["openrouter", "openai", "anthropic", "auto"]),
@@ -39,14 +39,14 @@ console = Console()
 @click.pass_context
 def cli(ctx: click.Context, provider: str):
     """
-    🧊 IceBreaker - AI-powered cold email generator
+    🧊 CybrOutreach - AI-powered cold email generator
     
     Generate personalized cold outreach emails using AI and proven copywriting frameworks.
     
     Examples:
-        icebreaker generate --to "John Smith" --company "Acme Corp"
-        icebreaker templates
-        icebreaker batch --csv leads.csv --tone professional
+        CybrOutreach generate --to "John Smith" --company "Acme Corp"
+        CybrOutreach templates
+        CybrOutreach batch --csv leads.csv --tone professional
     """
     ctx.ensure_object(dict)
     ctx.obj["provider"] = provider if provider != "auto" else None
@@ -124,7 +124,7 @@ def generate(
         template_enum = TemplateType(template_type)
         
         if not raw:
-            console.print(f"\n[bold cyan]🧊 IceBreaker[/bold cyan] v{__version__}")
+            console.print(f"\n[bold cyan]🧊 CybrOutreach[/bold cyan] v{__version__}")
             console.print(f"[dim]Generating {tone} {template_type} email...[/dim]\n")
         
         email = generator.generate(
@@ -169,7 +169,7 @@ def generate(
 def templates():
     """List all available email templates."""
     table = Table(
-        title="🧊 IceBreaker Templates",
+        title="🧊 CybrOutreach Templates",
         show_header=True,
         header_style="bold cyan"
     )
@@ -270,7 +270,7 @@ def batch(
         template_enum = TemplateType(template_type)
         
         # Prepare output directory
-        output_dir = Path(output) if output else Path("icebreaker_output")
+        output_dir = Path(output) if output else Path("cybroutreach_output")
         output_dir.mkdir(exist_ok=True)
         
         # Generate emails
@@ -307,7 +307,7 @@ def batch(
 @cli.command()
 def status():
     """Check API provider status and configuration."""
-    console.print(f"\n[bold cyan]🧊 IceBreaker[/bold cyan] v{__version__}\n")
+    console.print(f"\n[bold cyan]🧊 CybrOutreach[/bold cyan] v{__version__}\n")
     
     # Provider status
     providers = list_available_providers()

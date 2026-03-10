@@ -6,7 +6,7 @@ from click.testing import CliRunner
 
 import pytest
 
-from icebreaker.cli import cli, main
+from cybroutreach.cli import cli, main
 
 
 class TestCLICommands:
@@ -20,13 +20,13 @@ class TestCLICommands:
         """Test version flag."""
         result = self.runner.invoke(cli, ['--version'])
         assert result.exit_code == 0
-        assert 'icebreaker' in result.output.lower()
+        assert 'cybroutreach' in result.output.lower()
     
     def test_help(self):
         """Test help command."""
         result = self.runner.invoke(cli, ['--help'])
         assert result.exit_code == 0
-        assert 'IceBreaker' in result.output
+        assert 'CybrOutreach' in result.output
 
 
 class TestTemplatesCommand:
@@ -86,8 +86,8 @@ class TestGenerateCommand:
         """Setup for each test."""
         self.runner = CliRunner()
     
-    @patch('icebreaker.cli.get_provider')
-    @patch('icebreaker.cli.EmailGenerator')
+    @patch('cybroutreach.cli.get_provider')
+    @patch('cybroutreach.cli.EmailGenerator')
     def test_generate_basic(self, mock_generator_class, mock_get_provider):
         """Test basic generate command."""
         mock_provider = Mock()
@@ -144,7 +144,7 @@ class TestBatchCommand:
 class TestMain:
     """Test main entry point."""
     
-    @patch('icebreaker.cli.cli')
+    @patch('cybroutreach.cli.cli')
     def test_main_calls_cli(self, mock_cli):
         """Test that main calls the CLI."""
         main()

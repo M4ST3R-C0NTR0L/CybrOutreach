@@ -1,4 +1,4 @@
-"""Pytest configuration for IceBreaker."""
+"""Pytest configuration for CybrOutreach."""
 
 import os
 import pytest

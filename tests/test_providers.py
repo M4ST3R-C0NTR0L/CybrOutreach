@@ -5,7 +5,7 @@ from unittest.mock import Mock, patch, MagicMock
 
 import pytest
 
-from icebreaker.providers import (
+from cybroutreach.providers import (
     OpenRouterProvider,
     OpenAIProvider,
     AnthropicProvider,

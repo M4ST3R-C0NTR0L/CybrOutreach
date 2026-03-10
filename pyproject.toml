@@ -3,13 +3,13 @@ requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "icebreaker"
+name = "CybrOutreach"
 version = "1.0.0"
 description = "AI-powered cold email generator with personalized outreach"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    {name = "IceBreaker Team", email = "hello@icebreaker.dev"}
+    {name = "Cybrflux"}
 ]
 keywords = ["email", "outreach", "cold-email", "ai", "sales", "marketing"]
 classifiers = [
@@ -52,17 +52,16 @@ dev = [
 ]
 
 [project.scripts]
-icebreaker = "icebreaker.cli:main"
+CybrOutreach = "cybroutreach.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/icebreaker"
-Documentation = "https://github.com/yourusername/icebreaker#readme"
-Repository = "https://github.com/yourusername/icebreaker.git"
-"Bug Tracker" = "https://github.com/yourusername/icebreaker/issues"
+Homepage = "https://github.com/M4ST3R-C0NTR0L/CybrOutreach"
+Repository = "https://github.com/M4ST3R-C0NTR0L/CybrOutreach"
+"Bug Tracker" = "https://github.com/M4ST3R-C0NTR0L/CybrOutreach/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["icebreaker*"]
+include = ["cybroutreach*"]
 
 [tool.black]
 line-length = 100
@@ -92,7 +91,7 @@ markers = [
 ]
 
 [tool.coverage.run]
-source = ["icebreaker"]
+source = ["cybroutreach"]
 omit = ["*/tests/*", "*/venv/*"]
 
 [tool.coverage.report]
