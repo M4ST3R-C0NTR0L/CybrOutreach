@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/yourusername/CybrOutreach/main/assets/demo.gif" alt="CybrOutreach Demo" width="700">
+  <img src="https://raw.githubusercontent.com/M4ST3R-C0NTR0L/CybrOutreach/main/assets/demo.gif" alt="CybrOutreach Demo" width="700">
 </p>
 
 ## ✨ Features
@@ -38,7 +38,7 @@ pip install CybrOutreach
 ### From Source
 
 ```bash
-git clone https://github.com/yourusername/CybrOutreach.git
+git clone https://github.com/M4ST3R-C0NTR0L/CybrOutreach.git
 cd CybrOutreach
 pip install -e .
 ```
@@ -197,7 +197,7 @@ CybrOutreach --provider openai generate --to "John" --company "Acme"
 Or set via environment:
 
 ```bash
-export ICEBREAKER_PROVIDER="anthropic"
+export CYBROUTREACH_PROVIDER="anthropic"
 ```
 
 ## 📋 CSV Format
@@ -218,7 +218,7 @@ Optional columns:
 ### Setup
 
 ```bash
-git clone https://github.com/yourusername/CybrOutreach.git
+git clone https://github.com/M4ST3R-C0NTR0L/CybrOutreach.git
 cd CybrOutreach
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
